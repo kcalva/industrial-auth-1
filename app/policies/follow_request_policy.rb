@@ -1,4 +1,4 @@
-# app/policies/comment_policy.rb
+# app/policies/follow_request_policy.rb
 
 class FollowRequestPolicy < ApplicationPolicy
   # attr_reader :user, :follow_request
