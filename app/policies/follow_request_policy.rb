@@ -1,13 +1,6 @@
 # app/policies/follow_request_policy.rb
 
 class FollowRequestPolicy < ApplicationPolicy
-  # attr_reader :user, :follow_request
-
-  # def initialize(user, follow_request)
-  #   @user = user
-  #   @follow_request = follow_request
-  # end
-
   def show?
     user == record.recipient
   end
@@ -16,16 +9,12 @@ class FollowRequestPolicy < ApplicationPolicy
     true
   end
 
-  def edit?
+  def update?
     user == record.recipient || user == record.sender
   end
 
   def destroy?
-    edit?
-  end
-
-  def update?
-    edit?
+    update?
   end
 
 end

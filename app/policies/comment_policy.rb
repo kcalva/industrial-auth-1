@@ -1,27 +1,16 @@
 # app/policies/comment_policy.rb
 
 class CommentPolicy < ApplicationPolicy
-  # attr_reader :user, :comment
-
-  # def initialize(user, comment)
-  #   @user = user
-  #   @comment = comment
-  # end
-
-  def edit?
-    user == record.author
+  def create?
+    true
   end
 
   def update?
-    edit?
+    user == record.author
   end
 
   def destroy?
-    edit?
-  end
-
-  def create?
-    true
+    update?
   end
 
 end
